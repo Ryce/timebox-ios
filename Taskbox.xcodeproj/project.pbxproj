@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DA158A93211B7D8B00427382 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158A92211B7D8B00427382 /* AppDelegate.swift */; };
-		DA158A95211B7D8B00427382 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158A94211B7D8B00427382 /* ViewController.swift */; };
 		DA158A98211B7D8B00427382 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA158A96211B7D8B00427382 /* Main.storyboard */; };
 		DA158A9B211B7D8B00427382 /* Taskbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA158A99211B7D8B00427382 /* Taskbox.xcdatamodeld */; };
 		DA158A9D211B7D8C00427382 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA158A9C211B7D8C00427382 /* Assets.xcassets */; };
@@ -62,7 +61,6 @@
 /* Begin PBXFileReference section */
 		DA158A8F211B7D8B00427382 /* Taskbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA158A92211B7D8B00427382 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA158A94211B7D8B00427382 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA158A97211B7D8B00427382 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA158A9A211B7D8B00427382 /* Taskbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Taskbox.xcdatamodel; sourceTree = "<group>"; };
 		DA158A9C211B7D8C00427382 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,12 +178,11 @@
 		DA158AB8211B7FE400427382 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DA7CF1D3211CDC2500256FED /* Settings */,
+				DA7CF1D2211CDC1C00256FED /* Calendar */,
+				DA7CF1D1211CDC1400256FED /* Tasks */,
 				DA158A92211B7D8B00427382 /* AppDelegate.swift */,
-				DA158ABB211B7FF900427382 /* SetTasksViewController.swift */,
-				DA158AB9211B7FF400427382 /* SettingsViewController.swift */,
 				DA158AB6211B7FE000427382 /* TabBarController.swift */,
-				DA158ABD211B7FFE00427382 /* CalendarViewController.swift */,
-				DA158A94211B7D8B00427382 /* ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -228,6 +225,30 @@
 				DA158ACB211B801C00427382 /* Reusable.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA7CF1D1211CDC1400256FED /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				DA158ABB211B7FF900427382 /* SetTasksViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		DA7CF1D2211CDC1C00256FED /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				DA158ABD211B7FFE00427382 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		DA7CF1D3211CDC2500256FED /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DA158AB9211B7FF400427382 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,7 +361,6 @@
 				DA158AC9211B800C00427382 /* SectionSeparatorView.swift in Sources */,
 				DA158AD3211B802300427382 /* YourDayTableViewCell.swift in Sources */,
 				DA158AF7211B804900427382 /* Date+Comparators.swift in Sources */,
-				DA158A95211B7D8B00427382 /* ViewController.swift in Sources */,
 				DA158AB7211B7FE000427382 /* TabBarController.swift in Sources */,
 				DA158AF0211B804900427382 /* Date+Format.swift in Sources */,
 				DA158A93211B7D8B00427382 /* AppDelegate.swift in Sources */,

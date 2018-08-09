@@ -24,15 +24,14 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        monthLabel.text = monthOnlyDateFormatter.string(from: Date())
         drawShadow()
+        let indexPath = IndexPath(row: capacity / 2, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let indexPath = IndexPath(row: capacity / 2, section: 0)
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+        updateCurrentMonthIfNeeded()
     }
     
     private func drawShadow() {
@@ -45,7 +44,7 @@ class CalendarViewController: UIViewController {
     }
     
     private func updateCurrentMonthIfNeeded() {
-        guard let cells = collectionView.visibleCells as? [DayViewCell] else { return }
+        guard let cells = collectionView.visibleCells as? [DayViewCell], !cells.isEmpty else { return }
         let months = cells.compactMap({ $0.day?.component(.month) })
         let counts = months.reduce(into: [:]) { $0[$1, default: 0] += 1 }
         var highest = (0, 0)

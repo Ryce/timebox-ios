@@ -191,10 +191,48 @@
                             <color key="textColor" red="0.28627450980000002" green="0.31372549020000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
+                    <connections>
+                        <segue destination="4tT-vs-xPw" kind="relationship" relationship="rootViewController" id="kZV-uC-WWn"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IA-2S-zrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1458" y="400"/>
+        </scene>
+        <!--tasks-->
+        <scene sceneID="jI3-uT-SUT">
+            <objects>
+                <viewController storyboardIdentifier="SetTasksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4tT-vs-xPw" customClass="SetTasksViewController" customModule="Taskbox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e4p-Pb-gXC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUz-hI-uZP">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4tT-vs-xPw" id="gLz-6o-uNf"/>
+                                    <outlet property="delegate" destination="4tT-vs-xPw" id="BD3-bj-V61"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RYe-Yc-jU6" firstAttribute="trailing" secondItem="RUz-hI-uZP" secondAttribute="trailing" id="2Xu-h1-uqR"/>
+                            <constraint firstItem="RUz-hI-uZP" firstAttribute="top" secondItem="RYe-Yc-jU6" secondAttribute="top" id="blN-74-pte"/>
+                            <constraint firstItem="RYe-Yc-jU6" firstAttribute="bottom" secondItem="RUz-hI-uZP" secondAttribute="bottom" id="sLd-QW-imB"/>
+                            <constraint firstItem="RUz-hI-uZP" firstAttribute="leading" secondItem="RYe-Yc-jU6" secondAttribute="leading" id="x68-X9-iKi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RYe-Yc-jU6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="tasks" id="8Ow-mP-u3F"/>
+                    <connections>
+                        <outlet property="tableView" destination="RUz-hI-uZP" id="eH6-gg-NN7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rS6-kv-rns" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-610" y="400"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="hFf-BZ-P0G">
