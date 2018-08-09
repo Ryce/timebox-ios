@@ -14,6 +14,39 @@
 		DA158A9D211B7D8C00427382 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA158A9C211B7D8C00427382 /* Assets.xcassets */; };
 		DA158AA0211B7D8C00427382 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA158A9E211B7D8C00427382 /* LaunchScreen.storyboard */; };
 		DA158AAB211B7D8C00427382 /* TaskboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AAA211B7D8C00427382 /* TaskboxTests.swift */; };
+		DA158AB7211B7FE000427382 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AB6211B7FE000427382 /* TabBarController.swift */; };
+		DA158ABA211B7FF400427382 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AB9211B7FF400427382 /* SettingsViewController.swift */; };
+		DA158ABC211B7FF900427382 /* SetTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ABB211B7FF900427382 /* SetTasksViewController.swift */; };
+		DA158ABE211B7FFE00427382 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ABD211B7FFE00427382 /* CalendarViewController.swift */; };
+		DA158AC6211B800C00427382 /* DayScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AC1211B800C00427382 /* DayScrollView.swift */; };
+		DA158AC7211B800C00427382 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AC2211B800C00427382 /* WeekView.swift */; };
+		DA158AC9211B800C00427382 /* SectionSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AC4211B800C00427382 /* SectionSeparatorView.swift */; };
+		DA158ACC211B801D00427382 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ACA211B801C00427382 /* DateFormatters.swift */; };
+		DA158ACD211B801D00427382 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ACB211B801C00427382 /* Reusable.swift */; };
+		DA158AD1211B802300427382 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ACE211B802300427382 /* CalendarTableViewCell.swift */; };
+		DA158AD2211B802300427382 /* SmallTasksBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ACF211B802300427382 /* SmallTasksBubbleView.swift */; };
+		DA158AD3211B802300427382 /* YourDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AD0211B802300427382 /* YourDayTableViewCell.swift */; };
+		DA158AD6211B802B00427382 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AD4211B802A00427382 /* TaskTableViewCell.swift */; };
+		DA158AD7211B802B00427382 /* AddTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AD5211B802A00427382 /* AddTaskButton.swift */; };
+		DA158AE9211B804900427382 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AD9211B804700427382 /* Constants.swift */; };
+		DA158AEA211B804900427382 /* Date+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ADA211B804700427382 /* Date+Manipulations.swift */; };
+		DA158AEB211B804900427382 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA158ADB211B804700427382 /* DateTools.bundle */; };
+		DA158AEC211B804900427382 /* TimeChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ADC211B804800427382 /* TimeChunk.swift */; };
+		DA158AED211B804900427382 /* TimePeriodChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ADD211B804800427382 /* TimePeriodChain.swift */; };
+		DA158AEE211B804900427382 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ADE211B804800427382 /* TimePeriod.swift */; };
+		DA158AEF211B804900427382 /* Date+Inits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ADF211B804800427382 /* Date+Inits.swift */; };
+		DA158AF0211B804900427382 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE0211B804800427382 /* Date+Format.swift */; };
+		DA158AF1211B804900427382 /* TimePeriodCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE1211B804800427382 /* TimePeriodCollection.swift */; };
+		DA158AF2211B804900427382 /* Date+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE2211B804800427382 /* Date+Bundle.swift */; };
+		DA158AF3211B804900427382 /* Date+TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE3211B804800427382 /* Date+TimeAgo.swift */; };
+		DA158AF4211B804900427382 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE4211B804800427382 /* Enums.swift */; };
+		DA158AF5211B804900427382 /* Integer+DateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE5211B804800427382 /* Integer+DateTools.swift */; };
+		DA158AF6211B804900427382 /* TimePeriodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE6211B804800427382 /* TimePeriodGroup.swift */; };
+		DA158AF7211B804900427382 /* Date+Comparators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE7211B804800427382 /* Date+Comparators.swift */; };
+		DA158AF8211B804900427382 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AE8211B804800427382 /* Date+Components.swift */; };
+		DA158AFC211B80E600427382 /* PersistentStoreCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AF9211B80E600427382 /* PersistentStoreCreatable.swift */; };
+		DA158AFD211B80E600427382 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AFA211B80E600427382 /* Task.swift */; };
+		DA158AFE211B80E600427382 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AFB211B80E600427382 /* PersistentStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +71,39 @@
 		DA158AA6211B7D8C00427382 /* TaskboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA158AAA211B7D8C00427382 /* TaskboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskboxTests.swift; sourceTree = "<group>"; };
 		DA158AAC211B7D8C00427382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA158AB6211B7FE000427382 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DA158AB9211B7FF400427382 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DA158ABB211B7FF900427382 /* SetTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTasksViewController.swift; sourceTree = "<group>"; };
+		DA158ABD211B7FFE00427382 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		DA158AC1211B800C00427382 /* DayScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayScrollView.swift; sourceTree = "<group>"; };
+		DA158AC2211B800C00427382 /* WeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		DA158AC4211B800C00427382 /* SectionSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSeparatorView.swift; sourceTree = "<group>"; };
+		DA158ACA211B801C00427382 /* DateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		DA158ACB211B801C00427382 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		DA158ACE211B802300427382 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		DA158ACF211B802300427382 /* SmallTasksBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTasksBubbleView.swift; sourceTree = "<group>"; };
+		DA158AD0211B802300427382 /* YourDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourDayTableViewCell.swift; sourceTree = "<group>"; };
+		DA158AD4211B802A00427382 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		DA158AD5211B802A00427382 /* AddTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskButton.swift; sourceTree = "<group>"; };
+		DA158AD9211B804700427382 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA158ADA211B804700427382 /* Date+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Manipulations.swift"; sourceTree = "<group>"; };
+		DA158ADB211B804700427382 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
+		DA158ADC211B804800427382 /* TimeChunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeChunk.swift; sourceTree = "<group>"; };
+		DA158ADD211B804800427382 /* TimePeriodChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodChain.swift; sourceTree = "<group>"; };
+		DA158ADE211B804800427382 /* TimePeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
+		DA158ADF211B804800427382 /* Date+Inits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Inits.swift"; sourceTree = "<group>"; };
+		DA158AE0211B804800427382 /* Date+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
+		DA158AE1211B804800427382 /* TimePeriodCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodCollection.swift; sourceTree = "<group>"; };
+		DA158AE2211B804800427382 /* Date+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Bundle.swift"; sourceTree = "<group>"; };
+		DA158AE3211B804800427382 /* Date+TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgo.swift"; sourceTree = "<group>"; };
+		DA158AE4211B804800427382 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		DA158AE5211B804800427382 /* Integer+DateTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Integer+DateTools.swift"; sourceTree = "<group>"; };
+		DA158AE6211B804800427382 /* TimePeriodGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodGroup.swift; sourceTree = "<group>"; };
+		DA158AE7211B804800427382 /* Date+Comparators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Comparators.swift"; sourceTree = "<group>"; };
+		DA158AE8211B804800427382 /* Date+Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
+		DA158AF9211B80E600427382 /* PersistentStoreCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStoreCreatable.swift; sourceTree = "<group>"; };
+		DA158AFA211B80E600427382 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		DA158AFB211B80E600427382 /* PersistentStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +145,10 @@
 		DA158A91211B7D8B00427382 /* Taskbox */ = {
 			isa = PBXGroup;
 			children = (
-				DA158A92211B7D8B00427382 /* AppDelegate.swift */,
-				DA158A94211B7D8B00427382 /* ViewController.swift */,
+				DA158AD8211B803900427382 /* Extensions */,
+				DA158ABF211B800400427382 /* View */,
+				DA158AB8211B7FE400427382 /* ViewController */,
+				DA158AB5211B7F7400427382 /* Model */,
 				DA158A96211B7D8B00427382 /* Main.storyboard */,
 				DA158A9C211B7D8C00427382 /* Assets.xcassets */,
 				DA158A9E211B7D8C00427382 /* LaunchScreen.storyboard */,
@@ -97,6 +165,69 @@
 				DA158AAC211B7D8C00427382 /* Info.plist */,
 			);
 			path = TaskboxTests;
+			sourceTree = "<group>";
+		};
+		DA158AB5211B7F7400427382 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA158AFB211B80E600427382 /* PersistentStore.swift */,
+				DA158AF9211B80E600427382 /* PersistentStoreCreatable.swift */,
+				DA158AFA211B80E600427382 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA158AB8211B7FE400427382 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA158A92211B7D8B00427382 /* AppDelegate.swift */,
+				DA158ABB211B7FF900427382 /* SetTasksViewController.swift */,
+				DA158AB9211B7FF400427382 /* SettingsViewController.swift */,
+				DA158AB6211B7FE000427382 /* TabBarController.swift */,
+				DA158ABD211B7FFE00427382 /* CalendarViewController.swift */,
+				DA158A94211B7D8B00427382 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DA158ABF211B800400427382 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA158AC1211B800C00427382 /* DayScrollView.swift */,
+				DA158ACE211B802300427382 /* CalendarTableViewCell.swift */,
+				DA158ACF211B802300427382 /* SmallTasksBubbleView.swift */,
+				DA158AD5211B802A00427382 /* AddTaskButton.swift */,
+				DA158AD4211B802A00427382 /* TaskTableViewCell.swift */,
+				DA158AD0211B802300427382 /* YourDayTableViewCell.swift */,
+				DA158AC4211B800C00427382 /* SectionSeparatorView.swift */,
+				DA158AC2211B800C00427382 /* WeekView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA158AD8211B803900427382 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA158AD9211B804700427382 /* Constants.swift */,
+				DA158AE2211B804800427382 /* Date+Bundle.swift */,
+				DA158AE7211B804800427382 /* Date+Comparators.swift */,
+				DA158AE8211B804800427382 /* Date+Components.swift */,
+				DA158AE0211B804800427382 /* Date+Format.swift */,
+				DA158ADF211B804800427382 /* Date+Inits.swift */,
+				DA158ADA211B804700427382 /* Date+Manipulations.swift */,
+				DA158AE3211B804800427382 /* Date+TimeAgo.swift */,
+				DA158ADB211B804700427382 /* DateTools.bundle */,
+				DA158AE4211B804800427382 /* Enums.swift */,
+				DA158AE5211B804800427382 /* Integer+DateTools.swift */,
+				DA158ADC211B804800427382 /* TimeChunk.swift */,
+				DA158ADE211B804800427382 /* TimePeriod.swift */,
+				DA158ADD211B804800427382 /* TimePeriodChain.swift */,
+				DA158AE1211B804800427382 /* TimePeriodCollection.swift */,
+				DA158AE6211B804800427382 /* TimePeriodGroup.swift */,
+				DA158ACA211B801C00427382 /* DateFormatters.swift */,
+				DA158ACB211B801C00427382 /* Reusable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +280,11 @@
 				TargetAttributes = {
 					DA158A8E211B7D8B00427382 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					DA158AA5211B7D8C00427382 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = DA158A8E211B7D8B00427382;
 					};
 				};
@@ -183,6 +316,7 @@
 				DA158AA0211B7D8C00427382 /* LaunchScreen.storyboard in Resources */,
 				DA158A9D211B7D8C00427382 /* Assets.xcassets in Resources */,
 				DA158A98211B7D8B00427382 /* Main.storyboard in Resources */,
+				DA158AEB211B804900427382 /* DateTools.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +334,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA158ACD211B801D00427382 /* Reusable.swift in Sources */,
+				DA158AF6211B804900427382 /* TimePeriodGroup.swift in Sources */,
+				DA158AEE211B804900427382 /* TimePeriod.swift in Sources */,
+				DA158AC9211B800C00427382 /* SectionSeparatorView.swift in Sources */,
+				DA158AD3211B802300427382 /* YourDayTableViewCell.swift in Sources */,
+				DA158AF7211B804900427382 /* Date+Comparators.swift in Sources */,
 				DA158A95211B7D8B00427382 /* ViewController.swift in Sources */,
+				DA158AB7211B7FE000427382 /* TabBarController.swift in Sources */,
+				DA158AF0211B804900427382 /* Date+Format.swift in Sources */,
 				DA158A93211B7D8B00427382 /* AppDelegate.swift in Sources */,
+				DA158AD1211B802300427382 /* CalendarTableViewCell.swift in Sources */,
+				DA158ACC211B801D00427382 /* DateFormatters.swift in Sources */,
+				DA158AD6211B802B00427382 /* TaskTableViewCell.swift in Sources */,
+				DA158ABA211B7FF400427382 /* SettingsViewController.swift in Sources */,
+				DA158AEC211B804900427382 /* TimeChunk.swift in Sources */,
+				DA158ABC211B7FF900427382 /* SetTasksViewController.swift in Sources */,
+				DA158ABE211B7FFE00427382 /* CalendarViewController.swift in Sources */,
+				DA158AC7211B800C00427382 /* WeekView.swift in Sources */,
+				DA158AC6211B800C00427382 /* DayScrollView.swift in Sources */,
+				DA158AD7211B802B00427382 /* AddTaskButton.swift in Sources */,
+				DA158AF4211B804900427382 /* Enums.swift in Sources */,
 				DA158A9B211B7D8B00427382 /* Taskbox.xcdatamodeld in Sources */,
+				DA158AD2211B802300427382 /* SmallTasksBubbleView.swift in Sources */,
+				DA158AED211B804900427382 /* TimePeriodChain.swift in Sources */,
+				DA158AFC211B80E600427382 /* PersistentStoreCreatable.swift in Sources */,
+				DA158AF1211B804900427382 /* TimePeriodCollection.swift in Sources */,
+				DA158AFE211B80E600427382 /* PersistentStore.swift in Sources */,
+				DA158AE9211B804900427382 /* Constants.swift in Sources */,
+				DA158AF5211B804900427382 /* Integer+DateTools.swift in Sources */,
+				DA158AEA211B804900427382 /* Date+Manipulations.swift in Sources */,
+				DA158AEF211B804900427382 /* Date+Inits.swift in Sources */,
+				DA158AF3211B804900427382 /* Date+TimeAgo.swift in Sources */,
+				DA158AF2211B804900427382 /* Date+Bundle.swift in Sources */,
+				DA158AFD211B80E600427382 /* Task.swift in Sources */,
+				DA158AF8211B804900427382 /* Date+Components.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +537,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.riazy.Taskbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -389,7 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.riazy.Taskbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -409,7 +575,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.riazy.TaskboxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Taskbox.app/Taskbox";
 			};
@@ -430,7 +596,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.riazy.TaskboxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Taskbox.app/Taskbox";
 			};
