@@ -14,10 +14,6 @@ fileprivate var dateFormatter: DateFormatter = {
     return formatter
 }()
 
-class WeekView: UICollectionView {
-    
-}
-
 class DayViewCell: UICollectionViewCell, Reusable {
     
     var day: Date? {
@@ -25,6 +21,13 @@ class DayViewCell: UICollectionViewCell, Reusable {
             guard let day = day else { return }
             dayOfMonthLabel.text = "\(day.component(Calendar.Component.day))"
             dayOfWeek.text = dateFormatter.string(from: day).uppercased()
+        }
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            dayOfMonthLabel.textColor = isSelected ? UIColor.darkText : UIColor.greyText
+            dayOfWeek.textColor = isSelected ? UIColor.darkText : UIColor.greyText
         }
     }
     

@@ -24,23 +24,14 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawShadow()
-        let indexPath = IndexPath(row: capacity / 2, section: 0)
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+        collectionView.addDropShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateCurrentMonthIfNeeded()
-    }
-    
-    private func drawShadow() {
-        collectionView.layer.cornerRadius = 2
-        collectionView.clipsToBounds = false
-        collectionView.layer.shadowColor = UIColor.black.cgColor
-        collectionView.layer.shadowOffset = CGSize(width: 0.5, height: 4.0)
-        collectionView.layer.shadowOpacity = 0.5
-        collectionView.layer.shadowRadius = 5.0
+        let indexPath = IndexPath(row: capacity / 2, section: 0)
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
     
     private func updateCurrentMonthIfNeeded() {
@@ -56,6 +47,10 @@ class CalendarViewController: UIViewController {
         let components = DateComponents(calendar: .current, timeZone: nil, era: nil, year: nil, month: highest.0, day: nil, hour: nil, minute: nil, second: nil, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
         guard let date = components.date else { return }
         let newMonth = monthOnlyDateFormatter.string(from: date)
+        animateMonthChange(with: newMonth)
+    }
+    
+    func animateMonthChange(with newMonth: String) {
         if monthLabel.text != newMonth {
             UIView.animate(withDuration: 0.2, animations: {
                 self.monthLabel.alpha = 0.0
@@ -88,6 +83,10 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         cell.day = Calendar.current.date(byAdding: components, to: Date())
         updateCurrentMonthIfNeeded()
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
 }

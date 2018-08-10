@@ -17,12 +17,13 @@ class SetTasksViewController: UIViewController {
         }
     }
     
-    @IBOutlet var addTaskButton: UIButton!
+    @IBOutlet var addNewTaskView: UIView!
     
     var tasks: [Task] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNewTaskView.addDropShadow()
         title = "all tasks"
     }
     

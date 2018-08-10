@@ -18,15 +18,10 @@
 		DA158ABC211B7FF900427382 /* SetTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ABB211B7FF900427382 /* SetTasksViewController.swift */; };
 		DA158ABE211B7FFE00427382 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ABD211B7FFE00427382 /* CalendarViewController.swift */; };
 		DA158AC6211B800C00427382 /* DayScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AC1211B800C00427382 /* DayScrollView.swift */; };
-		DA158AC7211B800C00427382 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AC2211B800C00427382 /* WeekView.swift */; };
-		DA158AC9211B800C00427382 /* SectionSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AC4211B800C00427382 /* SectionSeparatorView.swift */; };
+		DA158AC7211B800C00427382 /* DayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AC2211B800C00427382 /* DayViewCell.swift */; };
 		DA158ACC211B801D00427382 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ACA211B801C00427382 /* DateFormatters.swift */; };
 		DA158ACD211B801D00427382 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ACB211B801C00427382 /* Reusable.swift */; };
-		DA158AD1211B802300427382 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ACE211B802300427382 /* CalendarTableViewCell.swift */; };
-		DA158AD2211B802300427382 /* SmallTasksBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ACF211B802300427382 /* SmallTasksBubbleView.swift */; };
-		DA158AD3211B802300427382 /* YourDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AD0211B802300427382 /* YourDayTableViewCell.swift */; };
 		DA158AD6211B802B00427382 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AD4211B802A00427382 /* TaskTableViewCell.swift */; };
-		DA158AD7211B802B00427382 /* AddTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AD5211B802A00427382 /* AddTaskButton.swift */; };
 		DA158AE9211B804900427382 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AD9211B804700427382 /* Constants.swift */; };
 		DA158AEA211B804900427382 /* Date+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158ADA211B804700427382 /* Date+Manipulations.swift */; };
 		DA158AEB211B804900427382 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA158ADB211B804700427382 /* DateTools.bundle */; };
@@ -46,6 +41,8 @@
 		DA158AFC211B80E600427382 /* PersistentStoreCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AF9211B80E600427382 /* PersistentStoreCreatable.swift */; };
 		DA158AFD211B80E600427382 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AFA211B80E600427382 /* Task.swift */; };
 		DA158AFE211B80E600427382 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AFB211B80E600427382 /* PersistentStore.swift */; };
+		DA7CF1D5211E189500256FED /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1D4211E189500256FED /* UIColor+Assets.swift */; };
+		DA7CF1D7211E255C00256FED /* UIView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1D6211E255C00256FED /* UIView+DropShadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,15 +71,10 @@
 		DA158ABB211B7FF900427382 /* SetTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTasksViewController.swift; sourceTree = "<group>"; };
 		DA158ABD211B7FFE00427382 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		DA158AC1211B800C00427382 /* DayScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayScrollView.swift; sourceTree = "<group>"; };
-		DA158AC2211B800C00427382 /* WeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
-		DA158AC4211B800C00427382 /* SectionSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSeparatorView.swift; sourceTree = "<group>"; };
+		DA158AC2211B800C00427382 /* DayViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewCell.swift; sourceTree = "<group>"; };
 		DA158ACA211B801C00427382 /* DateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		DA158ACB211B801C00427382 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		DA158ACE211B802300427382 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
-		DA158ACF211B802300427382 /* SmallTasksBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTasksBubbleView.swift; sourceTree = "<group>"; };
-		DA158AD0211B802300427382 /* YourDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourDayTableViewCell.swift; sourceTree = "<group>"; };
 		DA158AD4211B802A00427382 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
-		DA158AD5211B802A00427382 /* AddTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskButton.swift; sourceTree = "<group>"; };
 		DA158AD9211B804700427382 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA158ADA211B804700427382 /* Date+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Manipulations.swift"; sourceTree = "<group>"; };
 		DA158ADB211B804700427382 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
@@ -102,6 +94,8 @@
 		DA158AF9211B80E600427382 /* PersistentStoreCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStoreCreatable.swift; sourceTree = "<group>"; };
 		DA158AFA211B80E600427382 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		DA158AFB211B80E600427382 /* PersistentStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
+		DA7CF1D4211E189500256FED /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
+		DA7CF1D6211E255C00256FED /* UIView+DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DropShadow.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,14 +184,8 @@
 		DA158ABF211B800400427382 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DA158AC1211B800C00427382 /* DayScrollView.swift */,
-				DA158ACE211B802300427382 /* CalendarTableViewCell.swift */,
-				DA158ACF211B802300427382 /* SmallTasksBubbleView.swift */,
-				DA158AD5211B802A00427382 /* AddTaskButton.swift */,
-				DA158AD4211B802A00427382 /* TaskTableViewCell.swift */,
-				DA158AD0211B802300427382 /* YourDayTableViewCell.swift */,
-				DA158AC4211B800C00427382 /* SectionSeparatorView.swift */,
-				DA158AC2211B800C00427382 /* WeekView.swift */,
+				DA7CF1D9211E271600256FED /* Tasks */,
+				DA7CF1D8211E270E00256FED /* Calendar */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +211,8 @@
 				DA158AE6211B804800427382 /* TimePeriodGroup.swift */,
 				DA158ACA211B801C00427382 /* DateFormatters.swift */,
 				DA158ACB211B801C00427382 /* Reusable.swift */,
+				DA7CF1D4211E189500256FED /* UIColor+Assets.swift */,
+				DA7CF1D6211E255C00256FED /* UIView+DropShadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +239,23 @@
 				DA158AB9211B7FF400427382 /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		DA7CF1D8211E270E00256FED /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				DA158AC1211B800C00427382 /* DayScrollView.swift */,
+				DA158AC2211B800C00427382 /* DayViewCell.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		DA7CF1D9211E271600256FED /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				DA158AD4211B802A00427382 /* TaskTableViewCell.swift */,
+			);
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,25 +365,21 @@
 				DA158ACD211B801D00427382 /* Reusable.swift in Sources */,
 				DA158AF6211B804900427382 /* TimePeriodGroup.swift in Sources */,
 				DA158AEE211B804900427382 /* TimePeriod.swift in Sources */,
-				DA158AC9211B800C00427382 /* SectionSeparatorView.swift in Sources */,
-				DA158AD3211B802300427382 /* YourDayTableViewCell.swift in Sources */,
 				DA158AF7211B804900427382 /* Date+Comparators.swift in Sources */,
 				DA158AB7211B7FE000427382 /* TabBarController.swift in Sources */,
 				DA158AF0211B804900427382 /* Date+Format.swift in Sources */,
 				DA158A93211B7D8B00427382 /* AppDelegate.swift in Sources */,
-				DA158AD1211B802300427382 /* CalendarTableViewCell.swift in Sources */,
 				DA158ACC211B801D00427382 /* DateFormatters.swift in Sources */,
 				DA158AD6211B802B00427382 /* TaskTableViewCell.swift in Sources */,
+				DA7CF1D5211E189500256FED /* UIColor+Assets.swift in Sources */,
 				DA158ABA211B7FF400427382 /* SettingsViewController.swift in Sources */,
 				DA158AEC211B804900427382 /* TimeChunk.swift in Sources */,
 				DA158ABC211B7FF900427382 /* SetTasksViewController.swift in Sources */,
 				DA158ABE211B7FFE00427382 /* CalendarViewController.swift in Sources */,
-				DA158AC7211B800C00427382 /* WeekView.swift in Sources */,
+				DA158AC7211B800C00427382 /* DayViewCell.swift in Sources */,
 				DA158AC6211B800C00427382 /* DayScrollView.swift in Sources */,
-				DA158AD7211B802B00427382 /* AddTaskButton.swift in Sources */,
 				DA158AF4211B804900427382 /* Enums.swift in Sources */,
 				DA158A9B211B7D8B00427382 /* Taskbox.xcdatamodeld in Sources */,
-				DA158AD2211B802300427382 /* SmallTasksBubbleView.swift in Sources */,
 				DA158AED211B804900427382 /* TimePeriodChain.swift in Sources */,
 				DA158AFC211B80E600427382 /* PersistentStoreCreatable.swift in Sources */,
 				DA158AF1211B804900427382 /* TimePeriodCollection.swift in Sources */,
@@ -387,6 +390,7 @@
 				DA158AEF211B804900427382 /* Date+Inits.swift in Sources */,
 				DA158AF3211B804900427382 /* Date+TimeAgo.swift in Sources */,
 				DA158AF2211B804900427382 /* Date+Bundle.swift in Sources */,
+				DA7CF1D7211E255C00256FED /* UIView+DropShadow.swift in Sources */,
 				DA158AFD211B80E600427382 /* Task.swift in Sources */,
 				DA158AF8211B804900427382 /* Date+Components.swift in Sources */,
 			);
