@@ -84,5 +84,19 @@ public extension Date {
      */
 	public init (dateString: String, format: String) {
 		self.init(dateString: dateString, format: format, timeZone: TimeZone.autoupdatingCurrent)
-	}	
+	}
+    
+    
+    static var oneHour: Date {
+        return DateComponents(calendar: .current, timeZone: .current, era: 0, year: 0, month: 0, day: 0, hour: 1, minute: 0, second: 0, nanosecond: 0, weekday: 0, weekdayOrdinal: 0, quarter: 0, weekOfMonth: 0, weekOfYear: 0, yearForWeekOfYear: 0).date!
+    }
+    
+    static var twoHours: Date {
+        return DateComponents(calendar: .current, timeZone: .current, era: 0, year: 0, month: 0, day: 0, hour: 2, minute: 0, second: 0, nanosecond: 0, weekday: 0, weekdayOrdinal: 0, quarter: 0, weekOfMonth: 0, weekOfYear: 0, yearForWeekOfYear: 0).date!
+    }
+    
+    static var halfAnHour: Date {
+        return DateComponents(calendar: .current, timeZone: .current, era: 0, year: 0, month: 0, day: 0, hour: 0, minute: 30, second: 0, nanosecond: 0, weekday: 0, weekdayOrdinal: 0, quarter: 0, weekOfMonth: 0, weekOfYear: 0, yearForWeekOfYear: 0).date!
+    }
+
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SetTasksViewController: UIViewController {
     
@@ -17,20 +18,75 @@ class SetTasksViewController: UIViewController {
         }
     }
     
-    @IBOutlet var addNewTaskView: UIView!
+    @IBOutlet var addNewTaskView: AddNewTaskView!
     
     var tasks: [Task] = []
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    @IBOutlet var addNewTaskBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var addNewTaskHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addNewTaskView.addDropShadow()
         title = "all tasks"
+        
+        loadItems()
+        
+        registerForKeyboardNotifications()
+    }
+    
+    deinit {
+        removeKeyboardNotificationObservers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // TODO: Check if today was planned and show the day view or let user create his tasks
+    }
+    
+    func loadItems() {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        do {
+            tasks = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        tableView.reloadData()
+    }
+    
+    @IBAction func createNewItem() {
+        
+        addNewTaskView.showInputStyle()
+        
+        view.layoutIfNeeded()
+        
+//        var textField: UITextField!
+//        let alert = UIAlertController(title: "Create a new task", message: "", preferredStyle: .alert)
+//        alert.addTextField { (field) in
+//            textField = field
+//        }
+//        alert.addAction(UIAlertAction(title: "Add New Item", style: .default, handler: { (alert) in
+//            let task = Task(context: self.context)
+//            let time = Time(context: self.context)
+//            time.duration = .oneHour
+//            task.title = textField.text
+//            task.isCompleted = false
+//            task.time = time
+//            self.tasks.append(task)
+//            self.save()
+//        }))
+//        present(alert, animated: true, completion: nil)
+    }
+    
+    func save() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving item with \(error)")
+        }
+        tableView.reloadData()
     }
     
 }
@@ -52,8 +108,11 @@ extension SetTasksViewController {
         let curve = UIView.AnimationCurve(rawValue: (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).intValue)!
         let duration = TimeInterval(truncating: userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber)
         
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        
         UIViewPropertyAnimator.init(duration: duration, curve: curve) {
-            
+            self.addNewTaskHeightConstraint.constant = 200
+            self.addNewTaskBottomConstraint.constant = (endFrame?.height ?? 0) + 60
             }.startAnimation()
     }
     
@@ -79,6 +138,24 @@ extension SetTasksViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: TaskTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
         cell.task = tasks[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            tasks.remove(at: indexPath.row)
+            context.delete(task)
+            do {
+                try context.save()
+            } catch {
+                print("Error deleting item")
+            }
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
 }
