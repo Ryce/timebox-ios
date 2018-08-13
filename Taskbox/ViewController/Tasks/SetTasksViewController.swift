@@ -18,13 +18,10 @@ class SetTasksViewController: UIViewController {
         }
     }
     
-    @IBOutlet var addNewTaskView: AddNewTaskView!
+    @IBOutlet var addNewTaskView: UIView!
     
     var tasks: [Task] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    @IBOutlet var addNewTaskBottomConstraint: NSLayoutConstraint!
-    @IBOutlet var addNewTaskHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,27 +54,14 @@ class SetTasksViewController: UIViewController {
     }
     
     @IBAction func createNewItem() {
-        
-//        addNewTaskView.showInputStyle()
-//
-//        view.layoutIfNeeded()
-//
-        var textField: UITextField!
-        let alert = UIAlertController(title: "Create a new task", message: "", preferredStyle: .alert)
-        alert.addTextField { (field) in
-            textField = field
-        }
-        alert.addAction(UIAlertAction(title: "Add New Item", style: .default, handler: { (alert) in
-            let task = Task(context: self.context)
-            let time = Time(context: self.context)
-            time.duration = .oneHour
-            task.title = textField.text
-            task.isCompleted = false
-            task.time = time
-            self.tasks.append(task)
-            self.save()
-        }))
-        present(alert, animated: true, completion: nil)
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AddNewTaskViewController") as! AddNewTaskViewController
+        viewController.context = context
+        viewController.providesPresentationContextTransitionStyle = true
+        viewController.definesPresentationContext = true
+        viewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        viewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        viewController.delegate = self
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func save() {
@@ -111,6 +95,11 @@ extension SetTasksViewController {
         let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         
         UIViewPropertyAnimator.init(duration: duration, curve: curve) {
+<<<<<<< HEAD
+=======
+//            self.addNewTaskHeightConstraint.constant = 200
+//            self.addNewTaskBottomConstraint.constant = (endFrame?.height ?? 0) + 60
+>>>>>>> WIP
             }.startAnimation()
     }
     
@@ -154,6 +143,24 @@ extension SetTasksViewController: UITableViewDelegate, UITableViewDataSource {
             }
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+    
+}
+
+extension SetTasksViewController: AddNewTaskViewControllerDelegate {
+    
+    func addNewTaskViewController(_ viewController: AddNewTaskViewController, didSaveTask task: Task) {
+        tasks.append(task)
+        tableView.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func addNewTaskViewController(_ viewController: AddNewTaskViewController, didFailWithError error: Error) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func addNewTaskViewControllerDidCancel(_ viewController: AddNewTaskViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

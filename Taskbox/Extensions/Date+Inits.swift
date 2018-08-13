@@ -98,5 +98,10 @@ public extension Date {
     static var halfAnHour: Date {
         return DateComponents(calendar: .current, timeZone: .current, era: 0, year: 0, month: 0, day: 0, hour: 0, minute: 30, second: 0, nanosecond: 0, weekday: 0, weekdayOrdinal: 0, quarter: 0, weekOfMonth: 0, weekOfYear: 0, yearForWeekOfYear: 0).date!
     }
-
+    
+    static func from(minutes: Int) -> Date? {
+        guard minutes > 0 else { return nil }
+        return DateComponents(calendar: .current, timeZone: .current, era: 0, year: 0, month: 0, day: 0, hour: 0, minute: minutes, second: 0, nanosecond: 0, weekday: 0, weekdayOrdinal: 0, quarter: 0, weekOfMonth: 0, weekOfYear: 0, yearForWeekOfYear: 0).date!
+    }
+    
 }

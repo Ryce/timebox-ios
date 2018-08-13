@@ -43,7 +43,7 @@
 		DA158AFE211B80E600427382 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158AFB211B80E600427382 /* PersistentStore.swift */; };
 		DA7CF1D5211E189500256FED /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1D4211E189500256FED /* UIColor+Assets.swift */; };
 		DA7CF1D7211E255C00256FED /* UIView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1D6211E255C00256FED /* UIView+DropShadow.swift */; };
-		DA7CF1DB211F3A1000256FED /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1DA211F3A1000256FED /* AddNewTaskView.swift */; };
+		DA7CF1DB211F3A1000256FED /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1DA211F3A1000256FED /* AddNewTaskViewController.swift */; };
 		DA7CF1E1211F3CEF00256FED /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1DE211F3CEE00256FED /* Filters.swift */; };
 		DA7CF1E2211F3CEF00256FED /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1DF211F3CEE00256FED /* Slider.swift */; };
 		DA7CF1E3211F3CEF00256FED /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1E0211F3CEE00256FED /* ValueView.swift */; };
@@ -100,7 +100,7 @@
 		DA158AFB211B80E600427382 /* PersistentStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		DA7CF1D4211E189500256FED /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
 		DA7CF1D6211E255C00256FED /* UIView+DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DropShadow.swift"; sourceTree = "<group>"; };
-		DA7CF1DA211F3A1000256FED /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
+		DA7CF1DA211F3A1000256FED /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
 		DA7CF1DE211F3CEE00256FED /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		DA7CF1DF211F3CEE00256FED /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		DA7CF1E0211F3CEE00256FED /* ValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
@@ -229,6 +229,7 @@
 		DA7CF1D1211CDC1400256FED /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				DA7CF1DA211F3A1000256FED /* AddNewTaskViewController.swift */,
 				DA158ABB211B7FF900427382 /* SetTasksViewController.swift */,
 			);
 			path = Tasks;
@@ -263,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				DA158AD4211B802A00427382 /* TaskTableViewCell.swift */,
-				DA7CF1DA211F3A1000256FED /* AddNewTaskView.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -408,7 +408,7 @@
 				DA158AC7211B800C00427382 /* DayViewCell.swift in Sources */,
 				DA7CF1E1211F3CEF00256FED /* Filters.swift in Sources */,
 				DA158AC6211B800C00427382 /* DayScrollView.swift in Sources */,
-				DA7CF1DB211F3A1000256FED /* AddNewTaskView.swift in Sources */,
+				DA7CF1DB211F3A1000256FED /* AddNewTaskViewController.swift in Sources */,
 				DA158AF4211B804900427382 /* Enums.swift in Sources */,
 				DA158A9B211B7D8B00427382 /* Taskbox.xcdatamodeld in Sources */,
 				DA158AED211B804900427382 /* TimePeriodChain.swift in Sources */,
