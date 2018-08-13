@@ -58,26 +58,26 @@ class SetTasksViewController: UIViewController {
     
     @IBAction func createNewItem() {
         
-        addNewTaskView.showInputStyle()
-        
-        view.layoutIfNeeded()
-        
-//        var textField: UITextField!
-//        let alert = UIAlertController(title: "Create a new task", message: "", preferredStyle: .alert)
-//        alert.addTextField { (field) in
-//            textField = field
-//        }
-//        alert.addAction(UIAlertAction(title: "Add New Item", style: .default, handler: { (alert) in
-//            let task = Task(context: self.context)
-//            let time = Time(context: self.context)
-//            time.duration = .oneHour
-//            task.title = textField.text
-//            task.isCompleted = false
-//            task.time = time
-//            self.tasks.append(task)
-//            self.save()
-//        }))
-//        present(alert, animated: true, completion: nil)
+//        addNewTaskView.showInputStyle()
+//
+//        view.layoutIfNeeded()
+//
+        var textField: UITextField!
+        let alert = UIAlertController(title: "Create a new task", message: "", preferredStyle: .alert)
+        alert.addTextField { (field) in
+            textField = field
+        }
+        alert.addAction(UIAlertAction(title: "Add New Item", style: .default, handler: { (alert) in
+            let task = Task(context: self.context)
+            let time = Time(context: self.context)
+            time.duration = .oneHour
+            task.title = textField.text
+            task.isCompleted = false
+            task.time = time
+            self.tasks.append(task)
+            self.save()
+        }))
+        present(alert, animated: true, completion: nil)
     }
     
     func save() {
@@ -111,8 +111,6 @@ extension SetTasksViewController {
         let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         
         UIViewPropertyAnimator.init(duration: duration, curve: curve) {
-            self.addNewTaskHeightConstraint.constant = 200
-            self.addNewTaskBottomConstraint.constant = (endFrame?.height ?? 0) + 60
             }.startAnimation()
     }
     
