@@ -26,6 +26,7 @@ class AddNewTaskViewController: UIViewController {
     @IBOutlet var taskTextField: UITextField!
     @IBOutlet var slider: UISlider!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var backgroundView: UIView!
     
     var context: NSManagedObjectContext?
     weak var delegate: AddNewTaskViewControllerDelegate?
@@ -35,6 +36,8 @@ class AddNewTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
+        
+        backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cancel)))
     }
     
     deinit {
