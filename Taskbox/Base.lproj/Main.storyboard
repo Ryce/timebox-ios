@@ -359,7 +359,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JdC-Eg-vUJ">
-                                <rect key="frame" x="30" y="25" width="315" height="342"/>
+                                <rect key="frame" x="30" y="132.5" width="315" height="234.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OE5-2c-ZUk">
                                         <rect key="frame" x="89.5" y="15" width="136.5" height="25"/>
@@ -414,7 +414,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKd-Vs-04c">
-                                        <rect key="frame" x="133" y="245" width="48" height="30"/>
+                                        <rect key="frame" x="230" y="181" width="48" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
@@ -427,6 +427,7 @@
                                     <constraint firstItem="2Va-y2-XCp" firstAttribute="leading" secondItem="JdC-Eg-vUJ" secondAttribute="leading" constant="15" id="2qu-S2-Eo0"/>
                                     <constraint firstItem="xbI-hV-RPQ" firstAttribute="top" secondItem="guU-Pm-92g" secondAttribute="bottom" constant="10" id="37y-hY-1cf"/>
                                     <constraint firstItem="guU-Pm-92g" firstAttribute="leading" secondItem="VcL-P5-ZDe" secondAttribute="trailing" constant="15" id="3z7-II-lCa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mdx-fr-Wdg" secondAttribute="bottom" constant="20" id="4W3-1s-sbJ"/>
                                     <constraint firstAttribute="trailing" secondItem="w3q-q6-AT9" secondAttribute="trailing" constant="15" id="6us-dw-dIp"/>
                                     <constraint firstItem="xbI-hV-RPQ" firstAttribute="leading" secondItem="JdC-Eg-vUJ" secondAttribute="leading" constant="15" id="737-8g-xWz"/>
                                     <constraint firstAttribute="trailing" secondItem="xbI-hV-RPQ" secondAttribute="trailing" constant="15" id="8BY-Ak-fbq"/>
@@ -446,7 +447,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JdC-Eg-vUJ" firstAttribute="top" secondItem="vnP-BW-RuE" secondAttribute="top" constant="5" id="5E9-9e-omL"/>
+                            <constraint firstItem="JdC-Eg-vUJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vnP-BW-RuE" secondAttribute="top" constant="5" id="5E9-9e-omL"/>
                             <constraint firstItem="JdC-Eg-vUJ" firstAttribute="leading" secondItem="vnP-BW-RuE" secondAttribute="leading" constant="30" id="7uI-hT-CIm"/>
                             <constraint firstItem="vnP-BW-RuE" firstAttribute="bottom" secondItem="JdC-Eg-vUJ" secondAttribute="bottom" constant="300" id="8jp-sQ-Dle"/>
                             <constraint firstItem="yIi-Zi-Sqn" firstAttribute="top" secondItem="UTX-il-0Rw" secondAttribute="top" id="U52-Pf-DXv"/>
@@ -458,6 +459,7 @@
                         <viewLayoutGuide key="safeArea" id="vnP-BW-RuE"/>
                     </view>
                     <connections>
+                        <outlet property="containerBottomConstraint" destination="8jp-sQ-Dle" id="xwd-Ao-1n4"/>
                         <outlet property="containerView" destination="JdC-Eg-vUJ" id="Zkk-Em-kpf"/>
                         <outlet property="saveButton" destination="Mdx-fr-Wdg" id="d2p-pC-LOa"/>
                         <outlet property="slider" destination="xbI-hV-RPQ" id="0qe-Xq-7AP"/>
@@ -495,14 +497,8 @@
         <namedColor name="activeBlue">
             <color red="0.17647058823529413" green="0.5490196078431373" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="activeBlue">
-            <color red="0.17647058823529413" green="0.5490196078431373" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="darkText">
             <color red="0.28627450980392155" green="0.31372549019607843" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="greyText">
-            <color red="0.65098039215686276" green="0.67450980392156867" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="greyText">
             <color red="0.65098039215686276" green="0.67450980392156867" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

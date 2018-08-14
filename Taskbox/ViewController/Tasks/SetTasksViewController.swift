@@ -95,11 +95,7 @@ extension SetTasksViewController {
         let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         
         UIViewPropertyAnimator.init(duration: duration, curve: curve) {
-<<<<<<< HEAD
-=======
-//            self.addNewTaskHeightConstraint.constant = 200
-//            self.addNewTaskBottomConstraint.constant = (endFrame?.height ?? 0) + 60
->>>>>>> WIP
+            
             }.startAnimation()
     }
     

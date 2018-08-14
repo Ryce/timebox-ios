@@ -30,6 +30,17 @@ class AddNewTaskViewController: UIViewController {
     var context: NSManagedObjectContext?
     weak var delegate: AddNewTaskViewControllerDelegate?
     
+    @IBOutlet var containerBottomConstraint: NSLayoutConstraint!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        registerForKeyboardNotifications()
+    }
+    
+    deinit {
+        removeKeyboardNotificationObservers()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         taskTextField.becomeFirstResponder()
@@ -85,10 +96,10 @@ extension AddNewTaskViewController {
         let curve = UIView.AnimationCurve(rawValue: (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).intValue)!
         let duration = TimeInterval(truncating: userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber)
         
-        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        guard let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
         UIViewPropertyAnimator.init(duration: duration, curve: curve) {
-            
+            self.containerBottomConstraint.constant = endFrame.height + 20
             }.startAnimation()
     }
     
