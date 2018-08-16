@@ -15,6 +15,8 @@ class SetTasksViewController: UIViewController {
         didSet {
             tableView?.contentInset.top = 4.0
             tableView?.contentInset.bottom = 4.0
+            tableView.dragInteractionEnabled = true
+            tableView.dragDelegate = self
         }
     }
     
@@ -139,6 +141,17 @@ extension SetTasksViewController: UITableViewDelegate, UITableViewDataSource {
             }
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+    
+}
+
+extension SetTasksViewController: UITableViewDragDelegate {
+    
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let itemProvider = NSItemProvider(item: nil, typeIdentifier: nil)
+        let dragItem = TaskDragItem(itemProvider: itemProvider)
+        dragItem.task = tasks[indexPath.row]
+        return [dragItem]
     }
     
 }

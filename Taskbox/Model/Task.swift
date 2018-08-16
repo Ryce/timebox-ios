@@ -27,6 +27,12 @@ extension Task {
     
 }
 
+class TaskDragItem: UIDragItem {
+    
+    var task: Task?
+    
+}
+
 
 private func randomColor() -> UIColor {
     let hue = CGFloat(drand48())
