@@ -2,4 +2,62 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Taskbox/ViewController/Tasks/SetTasksViewController.swift"
+            timestampString = "556224881.961962"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "tableView(_:itemsForBeginning:at:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po minute">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Taskbox.SetTasksViewController.tableView(_: __C.UITableView, itemsForBeginning: __C.UIDragSession, at: Foundation.IndexPath) -&gt; Swift.Array&lt;__C.UIDragItem&gt;"
+                  moduleName = "Taskbox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamonriazy/Development/Taskbox/Taskbox/ViewController/Tasks/SetTasksViewController.swift"
+                  timestampString = "556224758.0480731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "1989">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;__C.UIDragPreview&gt; in Taskbox.SetTasksViewController.tableView(_: __C.UITableView, itemsForBeginning: __C.UIDragSession, at: Foundation.IndexPath) -&gt; Swift.Array&lt;__C.UIDragItem&gt;"
+                  moduleName = "Taskbox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hamonriazy/Development/Taskbox/Taskbox/ViewController/Tasks/SetTasksViewController.swift"
+                  timestampString = "556224758.050336"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

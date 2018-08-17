@@ -148,10 +148,23 @@ extension SetTasksViewController: UITableViewDelegate, UITableViewDataSource {
 extension SetTasksViewController: UITableViewDragDelegate {
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let itemProvider = NSItemProvider(item: nil, typeIdentifier: nil)
-        let dragItem = TaskDragItem(itemProvider: itemProvider)
-        dragItem.task = tasks[indexPath.row]
+        let task = tasks[indexPath.row]
+        let itemProvider = NSItemProvider(object: task.objectID.uriRepresentation() as NSURL)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = task
+        if let minute = task.time?.duration?.minute, let hours = task.time?.duration?.hour {
+            let height = (hours * 60) + minute
+            dragItem.previewProvider = {
+                let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: height))
+                view.backgroundColor = .green
+                return UIDragPreview(view: view)
+            }
+        }
         return [dragItem]
+    }
+    
+    func tableView(_ tableView: UITableView, dragSessionWillBegin session: UIDragSession) {
+        self.tabBarController?.selectedIndex = 0
     }
     
 }
