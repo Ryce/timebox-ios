@@ -151,7 +151,7 @@ extension SetTasksViewController: UITableViewDragDelegate {
         let task = tasks[indexPath.row]
         let itemProvider = NSItemProvider(object: task.objectID.uriRepresentation() as NSURL)
         let dragItem = UIDragItem(itemProvider: itemProvider)
-        dragItem.localObject = task
+        dragItem.localObject = indexPath
         dragItem.previewProvider = {
             return self.previewProvider(for: task)
         }
@@ -160,6 +160,15 @@ extension SetTasksViewController: UITableViewDragDelegate {
     
     func tableView(_ tableView: UITableView, dragSessionWillBegin session: UIDragSession) {
         self.tabBarController?.selectedIndex = 0
+    }
+    
+    func tableView(_ tableView: UITableView, dragSessionDidEnd session: UIDragSession) {
+        guard let indexPath = session.items.first?.localObject as? IndexPath else { return }
+        let task = tasks[indexPath.row]
+        if task.time?.beginning != nil {
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
     func previewProvider(for task: Task) -> UIDragPreview {
