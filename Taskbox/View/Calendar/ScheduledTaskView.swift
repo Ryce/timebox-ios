@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import QuartzCore
 
 class ScheduledTaskView: UIView {
     
@@ -37,6 +38,7 @@ class ScheduledTaskView: UIView {
     }
     
     func setupView() {
+        addDropShadow()
         titleLabel.text = task?.title
         scheduledLabel.text = task?.durationDescription
         
@@ -56,8 +58,15 @@ class ScheduledTaskView: UIView {
             ])
     }
     
-    func push(by: TimeChunk, in context: NSManagedObjectContext) {
-        // TODO: push this
+    func push(by timeChunk: TimeChunk, in context: NSManagedObjectContext) {
+        guard let task = task else { return }
+        task.time?.beginning = task.time?.beginning?.add(timeChunk)
+        task.time?.end = task.time?.end?.add(timeChunk)
+        do {
+            try context.save()
+        } catch let error {
+            print("error pushing task \(error)")
+        }
     }
     
 }

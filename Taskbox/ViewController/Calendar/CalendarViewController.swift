@@ -33,8 +33,10 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.addDropShadow()
-        
+        let dragInteraction = UIDragInteraction(delegate: self)
+        dragInteraction.isEnabled = true
         dayScrollView.addInteraction(UIDropInteraction(delegate: self))
+        dayScrollView.addInteraction(dragInteraction)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -186,5 +188,24 @@ extension CalendarViewController: UIDropInteractionDelegate {
     func dropInteraction(_ interaction: UIDropInteraction, item: UIDragItem, willAnimateDropWith animator: UIDragAnimating) {
         print("will animate drop")
     }
+    
+}
+
+extension CalendarViewController: UIDragInteractionDelegate {
+    
+    func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+        let location = session.location(in: dayScrollView)
+        guard let view = dayScrollView.hitTest(location, with: nil) as? ScheduledTaskView,
+            let task = view.task else { return [] }
+        
+        let itemProvider = NSItemProvider(object: task.objectID.uriRepresentation() as NSURL)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        
+        dragItem.previewProvider = {
+            return UIDragPreview(view: view)
+        }
+        return [dragItem]
+    }
+    
     
 }
