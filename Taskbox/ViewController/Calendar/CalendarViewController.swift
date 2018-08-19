@@ -26,6 +26,8 @@ class CalendarViewController: UIViewController {
     
     @IBOutlet var schedulingLabel: UILabel!
     
+    @IBOutlet var schedulingLabelTopConstraint: NSLayoutConstraint!
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -71,6 +73,20 @@ class CalendarViewController: UIViewController {
         }
     }
     
+    func date(for indexPath: IndexPath) -> Date? {
+        let dateOffset = indexPath.row - (capacity / 2)
+        var components = DateComponents()
+        components.day = dateOffset
+        return Calendar.current.date(byAdding: components, to: Date())
+    }
+    
+    func time(for dropLocation: CGFloat) -> Date? {
+        let minutes = Int(dropLocation + dayScrollView.contentOffset.y)
+        let hours = minutes / 60
+        let dateComponents = DateComponents(calendar: .current, timeZone: .current, era: nil, year: nil, month: nil, day: nil, hour: hours, minute: minutes, second: 0, nanosecond: 0, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+        return dateComponents.date
+    }
+    
 }
 
 extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -85,10 +101,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: DayViewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-        let dateOffset = indexPath.row - (capacity / 2)
-        var components = DateComponents()
-        components.day = dateOffset
-        cell.day = Calendar.current.date(byAdding: components, to: Date())
+        cell.day = date(for: indexPath)
         updateCurrentMonthIfNeeded()
         return cell
     }
@@ -113,7 +126,7 @@ extension CalendarViewController: UIDropInteractionDelegate {
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
-        let dropLocation = session.location(in: view)
+        let dropLocation = session.location(in: dayScrollView)
         let minutes = Int(dropLocation.y + dayScrollView.contentOffset.y)
         let hours = minutes / 60
         schedulingLabel.text = "schedule at \(hours):\(minutes % 60)"
@@ -137,9 +150,12 @@ extension CalendarViewController: UIDropInteractionDelegate {
                 print("failed fetch")
                 return
             }
-            print("task \(task)")
+            guard let selectedIndexPath = self.collectionView.indexPathsForSelectedItems?.first,
+                let date = date(for: selectedIndexPath) else { return }
+            
+            let dropLocation = session.location(in: self.dayScrollView)
+            let timeOfDay = time(for: dropLocation.y)
         }
-        print("perform drop")
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, concludeDrop session: UIDropSession) {
@@ -153,16 +169,12 @@ extension CalendarViewController: UIDropInteractionDelegate {
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, previewForDropping item: UIDragItem, withDefault defaultPreview: UITargetedDragPreview) -> UITargetedDragPreview? {
-        print(defaultPreview)
-        guard let taskItem = item as? TaskDragItem else { return nil }
-        print(taskItem)
-        let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 40, height: 40)))
-        view.backgroundColor = .green
-        return UITargetedDragPreview(view: view)
+        print("preview for dropping")
+        return nil
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, item: UIDragItem, willAnimateDropWith animator: UIDragAnimating) {
-        
+        print("will animate drop")
     }
     
 }
