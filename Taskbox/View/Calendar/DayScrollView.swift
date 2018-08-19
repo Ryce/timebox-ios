@@ -13,6 +13,7 @@ import ImageIO
 class DayScrollView: UIScrollView {
     
     @IBOutlet var hoursStackView: UIStackView!
+    private(set) public var taskViews: [ScheduledTaskView] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +21,26 @@ class DayScrollView: UIScrollView {
     }
     
     func setupView() {
-        (0...24).forEach({ hoursStackView.addArrangedSubview(HourView(hour: $0)) })
+        (0...23).forEach({ hoursStackView.addArrangedSubview(HourView(hour: $0)) })
+    }
+    
+    func addAndArrange(for taskView: ScheduledTaskView) {
+        taskViews.append(taskView)
+        let topOffset = (taskView.task!.time!.beginning!.hour * 60) + taskView.task!.time!.beginning!.minute
+        // TODO: check for overlapping taskviews and push everything accordingly
+        addSubview(taskView)
+        // TODO: need to arrange but just add for now
+        guard let task = taskView.task, let time = task.time else { return }
+        let minute = time.duration!.minute
+        let hours = time.duration!.hour
+        let height: CGFloat = CGFloat((hours * 60) + minute)
+        
+        NSLayoutConstraint.activate([
+            taskView.topAnchor.constraint(equalTo: topAnchor, constant: CGFloat(topOffset)),
+            taskView.leftAnchor.constraint(equalTo: leftAnchor, constant: 80),
+            taskView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15),
+            taskView.heightAnchor.constraint(equalToConstant: height),
+            ])
     }
     
 }

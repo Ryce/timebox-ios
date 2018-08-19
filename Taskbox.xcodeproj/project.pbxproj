@@ -47,6 +47,7 @@
 		DA7CF1E1211F3CEF00256FED /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1DE211F3CEE00256FED /* Filters.swift */; };
 		DA7CF1E2211F3CEF00256FED /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1DF211F3CEE00256FED /* Slider.swift */; };
 		DA7CF1E3211F3CEF00256FED /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CF1E0211F3CEE00256FED /* ValueView.swift */; };
+		DAC43BA821297E000097AE53 /* ScheduledTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC43BA721297E000097AE53 /* ScheduledTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		DA7CF1DE211F3CEE00256FED /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		DA7CF1DF211F3CEE00256FED /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		DA7CF1E0211F3CEE00256FED /* ValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
+		DAC43BA721297E000097AE53 /* ScheduledTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			children = (
 				DA158AC1211B800C00427382 /* DayScrollView.swift */,
 				DA158AC2211B800C00427382 /* DayViewCell.swift */,
+				DAC43BA721297E000097AE53 /* ScheduledTaskView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				DA158AFC211B80E600427382 /* PersistentStoreCreatable.swift in Sources */,
 				DA158AF1211B804900427382 /* TimePeriodCollection.swift in Sources */,
 				DA158AFE211B80E600427382 /* PersistentStore.swift in Sources */,
+				DAC43BA821297E000097AE53 /* ScheduledTaskView.swift in Sources */,
 				DA158AE9211B804900427382 /* Constants.swift in Sources */,
 				DA158AF5211B804900427382 /* Integer+DateTools.swift in Sources */,
 				DA158AEA211B804900427382 /* Date+Manipulations.swift in Sources */,

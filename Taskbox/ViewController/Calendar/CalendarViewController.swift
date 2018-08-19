@@ -80,11 +80,10 @@ class CalendarViewController: UIViewController {
         return Calendar.current.date(byAdding: components, to: Date())
     }
     
-    func time(for dropLocation: CGFloat) -> Date? {
-        let minutes = Int(dropLocation + dayScrollView.contentOffset.y)
+    func time(for totalOffset: CGFloat) -> Date? {
+        let minutes = Int(totalOffset)
         let hours = minutes / 60
-        let dateComponents = DateComponents(calendar: .current, timeZone: .current, era: nil, year: nil, month: nil, day: nil, hour: hours, minute: minutes, second: 0, nanosecond: 0, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
-        return dateComponents.date
+        return Date(hour: hours, minute: minutes % 60)
     }
     
 }
@@ -127,9 +126,8 @@ extension CalendarViewController: UIDropInteractionDelegate {
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
         let dropLocation = session.location(in: dayScrollView)
-        let minutes = Int(dropLocation.y + dayScrollView.contentOffset.y)
-        let hours = minutes / 60
-        schedulingLabel.text = "schedule at \(hours):\(minutes % 60)"
+        let date = time(for: dropLocation.y)
+        schedulingLabel.text = "schedule at \(date!.twentyFourHourString())"
         let proposal = UIDropProposal(operation: .move)
         proposal.isPrecise = true
         return proposal
@@ -151,10 +149,22 @@ extension CalendarViewController: UIDropInteractionDelegate {
                 return
             }
             guard let selectedIndexPath = self.collectionView.indexPathsForSelectedItems?.first,
-                let date = date(for: selectedIndexPath) else { return }
+                let date = self.date(for: selectedIndexPath) else { return }
             
             let dropLocation = session.location(in: self.dayScrollView)
-            let timeOfDay = time(for: dropLocation.y)
+            let timeOfDay = self.time(for: dropLocation.y)
+            let beginning = Date(mergeDay: date, withTime: timeOfDay!)
+            task?.time?.beginning = beginning
+            let timeDuration = task!.time!.duration!.chunk()
+            task?.time?.end = beginning.add(timeDuration)
+            do {
+                try self.context.save()
+            } catch let error {
+                print("error saving context: \(error)")
+            }
+            
+            let taskView = ScheduledTaskView(task: task!)
+            self.dayScrollView.addAndArrange(for: taskView)
         }
     }
     

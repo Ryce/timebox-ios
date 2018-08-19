@@ -54,6 +54,14 @@ public extension Date {
 		self.init(year: year, month: month, day: day, hour: 0, minute: 0, second: 0)
 	}
 	
+    public init(hour: Int, minute: Int) {
+        self.init(year: 0, month: 0, day: 0, hour: hour, minute: minute, second: 0)
+    }
+    
+    public init(mergeDay: Date, withTime time: Date) {
+        self.init(year: mergeDay.year, month: mergeDay.month, day: mergeDay.day, hour: time.hour, minute: time.minute, second: time.second)
+    }
+    
     /**
      *  Init date from string, given a format string, according to Apple's date formatting guide, and time zone.
      *

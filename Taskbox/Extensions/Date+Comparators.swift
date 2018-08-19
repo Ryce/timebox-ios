@@ -48,6 +48,10 @@ public extension Date {
         return TimeChunk(seconds: compenentsBetween.second!, minutes: compenentsBetween.minute!, hours: compenentsBetween.hour!, days: compenentsBetween.day!, weeks: 0, months: compenentsBetween.month!, years: compenentsBetween.year!)
         // TimeChunk(seconds: secondDelta, minutes: minuteDelta, hours: hourDelta, days: dayDelta, weeks: 0, months: monthDelta, years: yearDelta)
     }
+    
+    public func chunk() -> TimeChunk {
+        return TimeChunk(seconds: 0, minutes: self.minute, hours: self.hour, days: 0, weeks: 0, months: 0, years: 0)
+    }
 	
     /**
      *  Returns a true if receiver is equal to provided comparison date, otherwise returns false

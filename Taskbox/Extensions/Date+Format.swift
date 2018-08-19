@@ -33,6 +33,12 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
     
+    public func twentyFourHourString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: self)
+    }
+    
     /**
      *  Get string representation of date. Locale is automatically selected as the current locale of the system.
      *
