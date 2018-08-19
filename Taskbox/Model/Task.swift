@@ -25,14 +25,25 @@ extension Task {
         return String(format: "%02d:%02d", time?.duration?.hour ?? 0, time?.duration?.minute ?? 0)
     }
     
+    func doesIntersect(with task: Task) -> Bool {
+        guard let lhs = time?.timePeriod, let rhs = task.time?.timePeriod else { return false }
+        return lhs.intersects(with: rhs)
+    }
+    
+}
+
+extension Time {
+    
+    var timePeriod: TimePeriod? {
+        guard let beginning = beginning, let end = end else { return nil }
+        return TimePeriod(beginning: beginning, end: end)
+    }
+    
 }
 
 class TaskDragItem: UIDragItem {
-    
     var task: Task?
-    
 }
-
 
 private func randomColor() -> UIColor {
     let hue = CGFloat(drand48())

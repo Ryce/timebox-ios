@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ScheduledTaskView: UIView {
     
@@ -53,6 +54,10 @@ class ScheduledTaskView: UIView {
             scheduledLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 4.0),
             scheduledLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4.0),
             ])
+    }
+    
+    func push(by: TimeChunk, in context: NSManagedObjectContext) {
+        // TODO: push this
     }
     
 }
