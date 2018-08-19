@@ -38,7 +38,7 @@ class ScheduledTaskView: UIView {
     }
     
     func setupView() {
-        addDropShadow()
+        addDropShadow(height: 1.0, shadowRadius: 2.0)
         titleLabel.text = task?.title
         scheduledLabel.text = task?.durationDescription
         

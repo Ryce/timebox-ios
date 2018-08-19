@@ -153,7 +153,7 @@ extension SetTasksViewController: UITableViewDragDelegate {
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = indexPath
         dragItem.previewProvider = {
-            return self.previewProvider(for: task)
+            return task.makeDragPreview()
         }
         return [dragItem]
     }
@@ -169,41 +169,6 @@ extension SetTasksViewController: UITableViewDragDelegate {
             tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-    }
-    
-    func previewProvider(for task: Task) -> UIDragPreview {
-        let minute = task.time!.duration!.minute
-        let hours = task.time!.duration!.hour
-        let height = (hours * 60) + minute
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: height))
-        view.backgroundColor = .backgroundGrey
-        
-        let titleLabel = UILabel(frame: .zero)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont(name: "Avenir Next", size: 14.0)
-        titleLabel.text = task.title
-        titleLabel.numberOfLines = 0
-        view.addSubview(titleLabel)
-        
-        let timeLabel = UILabel(frame: .zero)
-        timeLabel.translatesAutoresizingMaskIntoConstraints = false
-        timeLabel.font = UIFont(name: "Avenir Next", size: 14.0)
-        timeLabel.text = task.durationDescription
-        timeLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        view.addSubview(timeLabel)
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 4.0),
-            titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 4.0),
-            titleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 4.0),
-            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: timeLabel.topAnchor, constant: -4.0),
-            timeLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 4.0),
-            timeLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 4.0),
-            timeLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -4.0),
-            ])
-        
-        return UIDragPreview(view: view)
     }
     
 }

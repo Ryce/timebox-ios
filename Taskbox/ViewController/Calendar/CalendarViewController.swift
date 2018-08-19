@@ -33,10 +33,7 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.addDropShadow()
-        let dragInteraction = UIDragInteraction(delegate: self)
-        dragInteraction.isEnabled = true
         dayScrollView.addInteraction(UIDropInteraction(delegate: self))
-        dayScrollView.addInteraction(dragInteraction)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -167,6 +164,10 @@ extension CalendarViewController: UIDropInteractionDelegate {
             
             let taskView = ScheduledTaskView(task: task!)
             self.dayScrollView.addAndArrange(for: taskView)
+            
+            let dragInteraction = UIDragInteraction(delegate: self)
+            dragInteraction.isEnabled = true
+            taskView.addInteraction(dragInteraction)
         }
     }
     
@@ -197,15 +198,31 @@ extension CalendarViewController: UIDragInteractionDelegate {
         let location = session.location(in: dayScrollView)
         guard let view = dayScrollView.hitTest(location, with: nil) as? ScheduledTaskView,
             let task = view.task else { return [] }
-        
         let itemProvider = NSItemProvider(object: task.objectID.uriRepresentation() as NSURL)
         let dragItem = UIDragItem(itemProvider: itemProvider)
-        
+        dragItem.localObject = view
         dragItem.previewProvider = {
-            return UIDragPreview(view: view)
+            return task.makeDragPreview()
         }
         return [dragItem]
     }
     
+    func dragInteraction(_ interaction: UIDragInteraction, sessionWillBegin session: UIDragSession) {
+        guard let view = session.items.first?.localObject as? ScheduledTaskView else { return }
+        if view.alpha == 1.0 {
+            view.alpha = 0.0
+        }
+    }
+    
+    func dragInteraction(_ interaction: UIDragInteraction, session: UIDragSession, didEndWith operation: UIDropOperation) {
+        guard let view = session.items.first?.localObject as? ScheduledTaskView else { return }
+        if operation == .cancel {
+            UIView.animate(withDuration: 0.3) {
+                view.alpha = 1.0
+            }
+        } else {
+            view.removeFromSuperview()
+        }
+    }
     
 }
