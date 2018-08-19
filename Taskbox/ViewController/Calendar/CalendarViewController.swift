@@ -34,13 +34,18 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         collectionView.addDropShadow()
         dayScrollView.addInteraction(UIDropInteraction(delegate: self))
+        
+        let tasks = loadItems(for: Date())
+        dayScrollView.setNewTasks(tasks.map({ taskView(for: $0) }))
+        
+        let indexPath = IndexPath(row: capacity / 2, section: 0)
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         updateCurrentMonthIfNeeded()
-        let indexPath = IndexPath(row: capacity / 2, section: 0)
-        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
     
     private func updateCurrentMonthIfNeeded() {
@@ -72,6 +77,17 @@ class CalendarViewController: UIViewController {
         }
     }
     
+    func loadItems(for date: Date) -> [Task] {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        request.predicate = date.predicate()
+        do {
+            return try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        return []
+    }
+    
     func date(for indexPath: IndexPath) -> Date? {
         let dateOffset = indexPath.row - (capacity / 2)
         var components = DateComponents()
@@ -83,6 +99,15 @@ class CalendarViewController: UIViewController {
         let minutes = Int(totalOffset)
         let hours = minutes / 60
         return Date(hour: hours, minute: minutes % 60)
+    }
+    
+    func taskView(for task: Task) -> ScheduledTaskView {
+        let taskView = ScheduledTaskView(task: task)
+        
+        let dragInteraction = UIDragInteraction(delegate: self)
+        dragInteraction.isEnabled = true
+        taskView.addInteraction(dragInteraction)
+        return taskView
     }
     
 }
@@ -106,8 +131,11 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        guard let date = date(for: indexPath) else { return }
+        
+        let items = loadItems(for: date)
+        dayScrollView.setNewTasks(items.map({ taskView(for: $0) }))
     }
-    
     
 }
 
@@ -127,9 +155,16 @@ extension CalendarViewController: UIDropInteractionDelegate {
         let dropLocation = session.location(in: dayScrollView)
         let date = time(for: dropLocation.y)
         schedulingLabel.text = "schedule at \(date!.twentyFourHourString())"
-        let proposal = UIDropProposal(operation: .move)
-        proposal.isPrecise = true
-        return proposal
+        let view = dayScrollView.hitTest(dropLocation, with: nil)
+        if view is ScheduledTaskView {
+            let proposal = UIDropProposal(operation: .cancel)
+            proposal.isPrecise = true
+            return proposal
+        } else {
+            let proposal = UIDropProposal(operation: .move)
+            proposal.isPrecise = true
+            return proposal
+        }
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidExit session: UIDropSession) {

@@ -47,6 +47,7 @@ class SetTasksViewController: UIViewController {
     
     func loadItems() {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
+        request.predicate = NSPredicate(format: "time.beginning == null")
         do {
             tasks = try context.fetch(request)
         } catch {

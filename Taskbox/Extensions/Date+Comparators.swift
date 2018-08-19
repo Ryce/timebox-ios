@@ -647,3 +647,22 @@ public extension Date {
         return max(seconds(from: date), 0)
     }
 }
+
+extension Date {
+    
+    func predicate() -> NSPredicate {
+        let calendar = NSCalendar.autoupdatingCurrent
+        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
+        components.hour = 00
+        components.minute = 00
+        components.second = 00
+        let startDate = calendar.date(from: components)
+        components.hour = 23
+        components.minute = 59
+        components.second = 59
+        let endDate = calendar.date(from: components)
+        
+        return NSPredicate(format: "time.beginning >= %@ AND time.beginning =< %@", argumentArray: [startDate!, endDate!])
+    }
+    
+}

@@ -24,6 +24,11 @@ class DayScrollView: UIScrollView {
         (0...23).forEach({ hoursStackView.addArrangedSubview(HourView(hour: $0)) })
     }
     
+    func setNewTasks(_ tasks: [ScheduledTaskView]) {
+        taskViews.forEach({ $0.removeFromSuperview() })
+        tasks.forEach({ addAndArrange(for: $0) })
+    }
+    
     func addAndArrange(for taskView: ScheduledTaskView) {
         taskViews.append(taskView)
         let topOffset = (taskView.task!.time!.beginning!.hour * 60) + taskView.task!.time!.beginning!.minute
